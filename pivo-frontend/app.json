@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "pivo-frontend",
+    "slug": "pivo-frontend",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
