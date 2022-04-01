@@ -1,24 +1,22 @@
-import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
+import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex-direction: column;
+  flex: 1;
   background-color: ${({ theme }) => theme.colors.primary};
 `;
 
-export const Header = styled.View`
+export const ContentSelectOperation = styled.View`
   flex-direction: column;
-  height: ${RFPercentage(44)}px;
-  background-color: ${({ theme }) => theme.colors.secondary};
-  border-bottom-left-radius: ${RFValue(160)}px;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 `;
 
-export const Title = styled.Text`
-  color: ${({ theme }) => theme.colors.primary};
-  font-size: ${RFValue(40)}px;
-  font-family: ${({ theme }) => theme.fonts.poiret};
-  text-align: right;
-  margin-right: ${RFValue(36)}px;;
+export const WrapSelectTypeControl = styled.View`
+  padding: 0 80px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: ${RFValue(32)}px;
 `;

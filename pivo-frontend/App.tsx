@@ -6,10 +6,10 @@ import { SelectOperation } from './src/screens/SelectOperation';
 
 import {
   useFonts,
-  Roboto_400Regular,
-  Roboto_500Medium,
-  Roboto_700Bold
-} from '@expo-google-fonts/roboto';
+  Montserrat_400Regular,
+  Montserrat_500Medium,
+  Montserrat_700Bold
+} from '@expo-google-fonts/montserrat';
 
 import {
   PoiretOne_400Regular
@@ -17,9 +17,9 @@ import {
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    Roboto_400Regular,
-    Roboto_500Medium,
-    Roboto_700Bold,
+    Montserrat_400Regular,
+    Montserrat_500Medium,
+    Montserrat_700Bold,
     PoiretOne_400Regular
   });
 

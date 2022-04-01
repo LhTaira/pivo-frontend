@@ -1,17 +1,26 @@
 import React from 'react';
+import { Header } from '../../components/Header';
+import { SelectTypeControl } from '../../components/SelectTypeControl';
 import { 
   Container,
-  Header,
-  Title,
+  ContentSelectOperation,
+  WrapSelectTypeControl
 } from './styles';
 
 export function SelectOperation(){
   return (
     <Container>
-      <Header>
-          <Title>Escolha o modo</Title>
-          <Title>de controle</Title>
-      </Header>
+      <Header title={'Escolha o modo de Controle'}/>
+      <ContentSelectOperation>
+        <WrapSelectTypeControl>
+          <SelectTypeControl
+            title={'Manual'}
+            subtitle={`Controle o pipe você mesmo`}/>
+          <SelectTypeControl
+            title={'Automático'} 
+            subtitle={`Defina alguns parâmetros e deixe o resto com a gente`}/>
+        </WrapSelectTypeControl>
+      </ContentSelectOperation>
     </Container>
   )
 }

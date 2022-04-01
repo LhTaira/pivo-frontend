@@ -13,9 +13,9 @@ export default {
   },
 
   fonts: {
-    regular: 'Roboto_400Regular',
-    medium: 'Roboto_500Medium',
-    bold: 'Roboto_700Bold',
+    regular: 'Montserrat_400Regular',
+    medium: 'Montserrat_500Medium',
+    bold: 'Montserrat_700Bold',
     poiret: 'PoiretOne_400Regular'
   }
 }
