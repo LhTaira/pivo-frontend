@@ -14,6 +14,8 @@ import {
 import {
   PoiretOne_400Regular
 } from '@expo-google-fonts/poiret-one';
+import { AppRoutes } from './src/routes/app.routes';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -26,13 +28,22 @@ export default function App() {
   if(!fontsLoaded) {
     return <AppLoading />
   }
-
+// Iremos colocar essa flag em um contexto e depois
+// se for veradeira signigica que o usuário quer trocar o modo
+// que o pivô será controlado
+const flag = false;
 
   return (
     <ThemeProvider theme={theme}>
-      <SelectOperation />
+      {flag 
+      ? <SelectOperation /> 
+      :(
+        <NavigationContainer>
+          <AppRoutes />
+        </NavigationContainer>
+      )}
+      
     </ThemeProvider>
-    
   );
 }
 
