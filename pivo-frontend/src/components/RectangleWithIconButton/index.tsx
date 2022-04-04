@@ -1,27 +1,33 @@
 import React from 'react';
-import { TouchableOpacityProps } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import AwesomeButton from "react-native-really-awesome-button";
 
 
 import { 
   Container,
 } from './styles';
 
-interface RectangleWithIconProps extends TouchableOpacityProps {
+interface RectangleWithIconProps {
   type: 'manual' | 'automatic';
 }
 
-export function RectangleWithIcon({ type, ...rest }: RectangleWithIconProps){
+const height = RFValue(100)
+const width = RFValue(100)
+
+export function RectangleWithIcon({ type }: RectangleWithIconProps){
   return(
-    <Container {...rest} style={{
-      shadowColor: 'rgba(0, 0, 0, 0.25)',
-      shadowOpacity: 0.8,
-      elevation: 6,
-      shadowRadius: 15 ,
-      shadowOffset : { width: 5, height: 13},}}>
-      {type === 'automatic' ? (
-        <MaterialCommunityIcons name="robot" size={40} color="#fcfcfc" />
-      ): <MaterialIcons name="control-camera" size={48} color='#fcfcfc'/>}
+    <Container>
+      <AwesomeButton
+      backgroundColor='#49AD96'
+      borderRadius={4}
+      height={height}
+      width={width}
+      >
+        {type === 'automatic' ? (
+          <MaterialCommunityIcons name="robot" size={40} color="#fcfcfc" />
+        ): <MaterialIcons name="control-camera" size={48} color='#fcfcfc'/>}
+      </AwesomeButton>
     </Container>
   )
 }
