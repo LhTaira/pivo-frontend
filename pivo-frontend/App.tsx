@@ -35,14 +35,9 @@ const flag = false;
 
   return (
     <ThemeProvider theme={theme}>
-      {flag 
-      ? <SelectOperation /> 
-      :(
-        <NavigationContainer>
-          <AppRoutes />
-        </NavigationContainer>
-      )}
-      
+      <NavigationContainer>
+        <AppRoutes />
+      </NavigationContainer>
     </ThemeProvider>
   );
 }

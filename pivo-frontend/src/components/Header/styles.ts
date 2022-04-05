@@ -14,6 +14,5 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.primary};
   font-size: ${RFValue(40)}px;
   font-family: ${({ theme }) => theme.fonts.poiret};
-  text-align: right;
   margin: 0 ${RFValue(36)}px;
 `;

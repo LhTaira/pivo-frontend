@@ -50,6 +50,7 @@ export function AppRoutes(){
         name="ControlPivo"
         component={ControlPivo}
         options={{
+          tabBarHideOnKeyboard: true,
           tabBarIcon: (({ color}) => 
             <MaterialCommunityIcons
               name="robot"
