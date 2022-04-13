@@ -24,9 +24,7 @@ export const Subtitle = styled.Text`
 `;
 
 export const Error = styled.Text`
-  font-size: ${RFValue(14)}px;
+  font-size: ${RFValue(12)}px;
   font-family: ${({ theme }) => theme.fonts.regular};
   color: ${({ theme }) => theme.colors.attention};
-
-  margin: 7px 0;
 `;

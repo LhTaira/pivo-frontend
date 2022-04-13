@@ -1,11 +1,17 @@
-import styled, { useTheme } from 'styled-components/native';
+import styled from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
-import AwesomeButtonProps from "react-native-really-awesome-button";
+import {TouchableOpacity} from "react-native";
+import { Feather } from '@expo/vector-icons'
 
-export const Container = styled(AwesomeButtonProps)``;
+export const Container = styled(TouchableOpacity)`
+  width: ${RFValue(36)}px;
+  height: ${RFValue(36)}px;
+  background-color: ${({ theme }) => theme.colors.secondary };
+  justify-content: center;
+  align-items: center;
+  border-radius: ${RFValue(4)}px;
+`;
 
-export const Title = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.medium};
-  font-size: ${RFValue(14)}px;
-  color: ${({ theme }) => theme.colors.shape};
+export const Icon = styled(Feather)`
+  color: ${({ theme }) => theme.colors.primary};
 `;

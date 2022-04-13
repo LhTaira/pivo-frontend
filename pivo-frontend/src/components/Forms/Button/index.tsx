@@ -1,23 +1,19 @@
 import React from 'react';
-import { AwesomeButtonProps } from "react-native-really-awesome-button";
+import { TouchableOpacityProps } from "react-native";
 
-export interface ButtonProps extends AwesomeButtonProps {
-  title: string;
+export interface ButtonProps extends TouchableOpacityProps {
   onPress: () => void;
 }
 
-import { Container, Title } from './styles';
+import { Container, Icon } from './styles';
 
-export function Button({ title, onPress, ...rest }: ButtonProps){
+export function Button({ onPress, ...rest }: ButtonProps){
   return(
-    <Container    
+    <Container  
       onPress={onPress} 
       {...rest}
-      backgroundColor='#FF872C'
-      borderRadius={4}
-      stretch={true}
     >
-      <Title>{title}</Title>
+      <Icon name='check' size={24} color='#FCFCFCyy'/>
     </Container>
   )
 }
