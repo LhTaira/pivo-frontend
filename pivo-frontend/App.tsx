@@ -14,30 +14,31 @@ import {
 import {
   PoiretOne_400Regular
 } from '@expo-google-fonts/poiret-one';
-import { AppRoutes } from './src/routes/app.routes';
-import { NavigationContainer } from '@react-navigation/native';
+import { AutomaticRoutes } from './src/routes/automatic.routes';
+import { ManualRoutes } from './src/routes/manual.routes';
+import { Routes } from './src/routes';
+import AppProvider from './src/hooks';
+import { usePivo } from './src/hooks/pivo';
 
 export default function App() {
+  const { pivoMode } = usePivo()
   const [fontsLoaded] = useFonts({
     Montserrat_400Regular,
     Montserrat_500Medium,
     Montserrat_700Bold,
     PoiretOne_400Regular
   });
+  console.log(pivoMode);
 
   if(!fontsLoaded) {
     return <AppLoading />
   }
-// Iremos colocar essa flag em um contexto e depois
-// se for veradeira signigica que o usuário quer trocar o modo
-// que o pivô será controlado
-const flag = false;
-
+  
   return (
     <ThemeProvider theme={theme}>
-      <NavigationContainer>
-        <AppRoutes />
-      </NavigationContainer>
+        <AppProvider>
+          <Routes />
+        </AppProvider>
     </ThemeProvider>
   );
 }

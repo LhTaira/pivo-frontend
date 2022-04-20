@@ -15,11 +15,11 @@ import { Toogle } from '../../components/Toogle';
 
 export function Settings(){
   // Criar estada para cada Toogle
-  const [activePipe, setActivePipe] = useState(false);
-  const [bombs, setBombs] = useState(false);
-  const [arms, setArms] = useState(false);
-  const [reels, setReels] = useState(false);
-  const [wheels, setWheels] = useState(false);
+  const [activePipe, setActivePipe] = useState(true);
+  const [bombs, setBombs] = useState(true);
+  const [arms, setArms] = useState(true);
+  const [reels, setReels] = useState(true);
+  const [wheels, setWheels] = useState(true);
 
   const handleActivePipe = useCallback(() => {
     setActivePipe(!activePipe);
@@ -49,7 +49,7 @@ export function Settings(){
       <Subtitle>Controle Parâmetros gerais como bombas, motores e desligue o pivô quando quiser</Subtitle>
       <Content>
         <Toogle 
-            title={'Ativar Pipe'}
+            title={'Pipe'}
             active={activePipe}
             handle={handleActivePipe}
           />

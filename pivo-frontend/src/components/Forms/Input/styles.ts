@@ -24,6 +24,7 @@ export const InputComponent = styled(TextInput)`
   color: ${({ theme }) => theme.colors.text};
 `;
 
+//@ts-ignore
 export const IconInput = styled(MaterialCommunityIcons&&Ionicons)`
   padding-left: ${RFValue(16)}px;
   padding-right: ${RFValue(8)}px;

@@ -12,10 +12,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 const { Navigator, Screen } = createBottomTabNavigator();
 
 import { SelectOperation } from '../screens/SelectOperation';
-import { ControlPivo } from '../screens/ControlPivo';
+import { Gamepad } from '../screens/Gamepad';
 import { Settings } from '../screens/Settings';
 
-export function AppRoutes(){
+export function ManualRoutes(){
   const theme = useTheme();
   return(
     <Navigator
@@ -33,27 +33,13 @@ export function AppRoutes(){
       }}
     >
       <Screen
-        name="SelectOperation"
-        component={SelectOperation}
-        options={{
-          
-          tabBarIcon: (({ color }) => 
-            <MaterialCommunityIcons
-              name="sprinkler-variant"
-              size={32}
-              color={color}
-            />
-          )
-        }}
-      />
-      <Screen
-        name="ControlPivo"
-        component={ControlPivo}
+        name="Gamepad"
+        component={Gamepad}
         options={{
           tabBarHideOnKeyboard: true,
           tabBarIcon: (({ color}) => 
-            <MaterialCommunityIcons
-              name="robot"
+            <MaterialIcons
+              name="gamepad"
               size={32}
               color={color}
             />

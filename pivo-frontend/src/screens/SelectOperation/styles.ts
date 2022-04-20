@@ -11,12 +11,13 @@ export const ContentSelectOperation = styled.View`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex: 1;
 `;
 
 export const WrapSelectTypeControl = styled.View`
+  height: 51.5%;
   padding: 0 80px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
-  margin-top: ${RFValue(32)}px;
 `;

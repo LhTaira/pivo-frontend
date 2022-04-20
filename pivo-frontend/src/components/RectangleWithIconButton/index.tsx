@@ -2,6 +2,7 @@ import React from 'react';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import AwesomeButton from "react-native-really-awesome-button";
+import { usePivo } from '../../hooks/pivo';
 
 
 import { 
@@ -16,6 +17,8 @@ const height = RFValue(100)
 const width = RFValue(100)
 
 export function RectangleWithIcon({ type }: RectangleWithIconProps){
+  const {setPivoModeValue, pivoMode } = usePivo();
+  console.log(pivoMode);
   return(
     <Container>
       <AwesomeButton
@@ -23,6 +26,7 @@ export function RectangleWithIcon({ type }: RectangleWithIconProps){
       borderRadius={4}
       height={height}
       width={width}
+      onPress={() => setPivoModeValue(type)}
       >
         {type === 'automatic' ? (
           <MaterialCommunityIcons name="robot" size={40} color="#fcfcfc" />

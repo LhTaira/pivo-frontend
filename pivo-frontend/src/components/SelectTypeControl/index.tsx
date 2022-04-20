@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyleProp, ViewProps, ViewStyle } from 'react-native';
 import { RectangleWithIcon } from '../RectangleWithIconButton';
 import {
   Container,
@@ -7,15 +8,16 @@ import {
   Subtitle,
 } from './styles';
 
-interface SelectTypeControl {
+interface SelectTypeControl{
   title: string;
   subtitle: string;
+  style?: StyleProp<ViewStyle>
 }
 
-export function SelectTypeControl({ title, subtitle }: SelectTypeControl){
+export function SelectTypeControl({ title, subtitle, ...rest }: SelectTypeControl){
   return (
-    <Container>
-      <RectangleWithIcon type={title === 'Automático' ? 'automatic': 'manual'}/>
+    <Container {...rest}>
+      <RectangleWithIcon  type={title === 'Automático' ? 'automatic': 'manual'}/>
       <ContentTypeControl>
         <Title>{title}</Title>
         <Subtitle>{subtitle}</Subtitle>

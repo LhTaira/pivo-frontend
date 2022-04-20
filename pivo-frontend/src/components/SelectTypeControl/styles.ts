@@ -4,7 +4,6 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   flex-direction: row;
   align-items: center;
-  margin-top: ${RFValue(32)}px;
 `;
 
 export const ContentTypeControl = styled.View`
@@ -18,8 +17,6 @@ export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.medium};
   text-align: left;
   margin-bottom: 2px;
-
-
 `;
 
 export const Subtitle = styled.Text`

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
-import {TouchableOpacity} from "react-native";
+import { TouchableOpacity } from "react-native";
 import { Feather } from '@expo/vector-icons'
 
 export const Container = styled(TouchableOpacity)`
@@ -12,6 +12,7 @@ export const Container = styled(TouchableOpacity)`
   border-radius: ${RFValue(4)}px;
 `;
 
+//@ts-ignore
 export const Icon = styled(Feather)`
   color: ${({ theme }) => theme.colors.primary};
 `;

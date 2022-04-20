@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header } from '../../components/Header';
 import { SelectTypeControl } from '../../components/SelectTypeControl';
+import { usePivo } from '../../hooks/pivo';
 import { 
   Container,
   ContentSelectOperation,
@@ -15,10 +16,12 @@ export function SelectOperation(){
         <WrapSelectTypeControl>
           <SelectTypeControl
             title={'Manual'}
-            subtitle={`Controle o pipe você mesmo`}/>
+            subtitle={`Controle o pipe você mesmo`}
+          />
           <SelectTypeControl
             title={'Automático'} 
-            subtitle={`Defina alguns parâmetros e deixe o resto com a gente`}/>
+            subtitle={`Defina alguns parâmetros e deixe o resto com a gente`}
+            />
         </WrapSelectTypeControl>
       </ContentSelectOperation>
     </Container>
