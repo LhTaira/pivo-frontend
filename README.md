@@ -1,7 +1,7 @@
 <img src="https://img.shields.io/github/license/LhTaira/pivo-frontend?color=green&style=for-the-badge"> <img src="https://img.shields.io/github/stars/LhTaira/pivo-frontend?color=green&style=for-the-badge"> 
+
 </br>
-</br>
-<p align="center"><img src=""></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/48137972/164780208-9abfef73-8b88-40ea-83b0-2bc0d8c6fd25.png"></p>
 
 ## Sobre
 <p align="justify">A irrigação para pequenos produtores torna-se uma solução promissora pois previne perdas por condições climáticas adversas sem prejudicar a produtividade e a sub-sistência das terras de plantio a um custo acessível para tal público alvo. Tem-se como objetivo o desenvolvimento de uma solução voltada para irrigação com foco no pequeno agricultor para promoção do aumento de rendimento da produção por área de plantio, de forma a contribuir para o desenvolvimento sustentável e gerar benefícios no âmbito econômico nacional</p>
