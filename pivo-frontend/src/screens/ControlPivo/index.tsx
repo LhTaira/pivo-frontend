@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import * as Yup from 'yup';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { usePivo } from '../../hooks/pivo';
 
 import { useForm } from 'react-hook-form';
 import { 
@@ -33,8 +34,8 @@ const schema = Yup.object().shape({
 })
 
 export function ControlPivo(){
+  const { pivoMode } = usePivo();
   const navigation = useNavigation<NavigationProps>();
-  
   
   const {
     control,
@@ -90,7 +91,7 @@ export function ControlPivo(){
 
       
       <Container>
-        <Header title={`Controle de Irrigação`}/>
+        <Header pivoMode={pivoMode} title={`Controle de Irrigação`}/>
         <Form>
           <Fields>
           <InputForm 

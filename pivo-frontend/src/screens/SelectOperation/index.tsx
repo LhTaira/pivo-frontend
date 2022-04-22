@@ -9,9 +9,10 @@ import {
 } from './styles';
 
 export function SelectOperation(){
+  const { pivoMode } = usePivo();
   return (
     <Container>
-      <Header title={'Escolha o modo de Controle'}/>
+      <Header pivoMode={pivoMode} title={'Escolha o modo de Controle'}/>
       <ContentSelectOperation>
         <WrapSelectTypeControl>
           <SelectTypeControl

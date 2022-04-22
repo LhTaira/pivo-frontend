@@ -25,7 +25,6 @@ export const Subtitle = styled.Text`
   text-align: left;
   margin-left: ${RFValue(28)}px;
   margin-right: ${RFValue(28)}px;
-  margin-bottom: ${RFValue(16)}px;
 `;
 
 export const Content = styled.View`
@@ -36,6 +35,10 @@ export const Content = styled.View`
   justify-content: center;
 `;
 
+export const WrapLeftDiagonal = styled.View`
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const WrapVertical = styled.View`
-  margin: 0 8px;
 `;

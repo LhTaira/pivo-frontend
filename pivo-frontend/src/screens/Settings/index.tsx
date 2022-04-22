@@ -10,6 +10,7 @@ import {
   SectionTwo,
 } from './styles';
 import { Toogle } from '../../components/Toogle';
+import { usePivo } from '../../hooks/pivo';
 
 
 
@@ -41,10 +42,10 @@ export function Settings(){
     setWheels(!wheels);
   }, [wheels])
 
-
+  const { pivoMode }= usePivo();
   return (
     <Container>
-      <Header title={`Ligar e Desligar`}/>
+      <Header pivoMode={pivoMode} title={`Ligar e Desligar`}/>
       <Title>Controle Geral</Title>
       <Subtitle>Controle Parâmetros gerais como bombas, motores e desligue o pivô quando quiser</Subtitle>
       <Content>
