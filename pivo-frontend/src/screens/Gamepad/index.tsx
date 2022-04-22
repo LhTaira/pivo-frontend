@@ -25,7 +25,7 @@ export function Gamepad(){
 
   return (
     <Container>
-      <Header pivoMode={pivoMode} title={'Escolha o modo de Controle'}/>
+      <Header pivoMode={pivoMode} title={'Controle o Pivô Manualmente'}/>
       <Title>Controle</Title>
       <Subtitle>Controle o Pivô de maneira simples</Subtitle>
       <Content>

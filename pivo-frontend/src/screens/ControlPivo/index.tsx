@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { KeyboardAvoidingView, Platform } from 'react-native';
 import { InputForm } from '../../components/Forms/InputForm';
 import { Header } from '../../components/Header';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -34,9 +35,10 @@ const schema = Yup.object().shape({
 })
 
 export function ControlPivo(){
+  const [behavior, setBehavior] = useState<any>(undefined);
   const { pivoMode } = usePivo();
   const navigation = useNavigation<NavigationProps>();
-  
+
   const {
     control,
     handleSubmit,
@@ -78,7 +80,6 @@ export function ControlPivo(){
       Alert.alert('Não foi possível salvar');
     }
   }, []);
-
   return (
     <TouchableWithoutFeedback 
       onPress={Keyboard.dismiss}
@@ -88,28 +89,31 @@ export function ControlPivo(){
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={{ flex: 1 }}>
-
-      
-      <Container>
+      <KeyboardAvoidingView
+         style={{ flex: 1, flexDirection: 'column', backgroundColor: '#FCFCFC' }}
+         behavior={behavior}>
         <Header pivoMode={pivoMode} title={`Controle de Irrigação`}/>
         <Form>
           <Fields>
+
           <InputForm 
             title={`Lâmina d'água`}
             subtitle={`Determine a lâmina d'água (mm)`}
             icon='water-outline'
             name="lamina"
             control={control}
+            onPressIn={() => setBehavior(undefined)}
             keyboardType="numeric"
             placeholder="112"
             error={errors.lamina && errors.lamina.message} 
           />
 
-          <InputForm 
+          <InputForm
             title={`Tempo de Irrigação`}
             subtitle={`Determine o tempo de irrigação (Até 24h)`}
             icon='time-outline'
             name="irrigation"
+            onPressIn={() => setBehavior('position')}
             control={control} 
             placeholder="10"
             keyboardType="numeric"
@@ -117,12 +121,12 @@ export function ControlPivo(){
           />
           </Fields>
           <WrapButton>
-            <Title>Salvar</Title>
+            <Title>Salvar</Title> 
             <Button onPress={handleSubmit(handleRegister)}/>
           </WrapButton>
         </Form>
 
-      </Container>
+      </KeyboardAvoidingView>
       </ScrollView>
     </TouchableWithoutFeedback>
   )

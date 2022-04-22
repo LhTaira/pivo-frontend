@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { Platform } from 'react-native';
 import { 
@@ -35,13 +36,13 @@ export function AutomaticRoutes(){
         component={ControlPivo}
         options={{
           tabBarHideOnKeyboard: true,
-          tabBarIcon: (({ color}) => 
+          tabBarIcon: (({ color}) =>
             <MaterialCommunityIcons
               name="robot"
               size={32}
               color={color}
             />
-          )
+          ),
         }}
       />
       <Screen 

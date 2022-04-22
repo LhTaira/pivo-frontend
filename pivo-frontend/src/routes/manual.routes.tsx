@@ -1,8 +1,8 @@
+// @ts-nocheck
 import React from 'react';
 import { Platform } from 'react-native';
 import { 
   MaterialIcons,
-  MaterialCommunityIcons,
   Ionicons 
 } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
@@ -11,7 +11,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
-import { SelectOperation } from '../screens/SelectOperation';
 import { Gamepad } from '../screens/Gamepad';
 import { Settings } from '../screens/Settings';
 
