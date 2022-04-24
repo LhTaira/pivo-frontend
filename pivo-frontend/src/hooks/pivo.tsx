@@ -49,47 +49,47 @@ const PivoProvider: React.FC<PivoProviderProps> = ({ children }) => {
   const handleUp = useCallback(async() => {
     if(down) {
       await api.post('path', {
-        down: setDown(false)
+        L0: setDown(false)
       });
     }
 
     if(downRight){
       await api.post('path', {
-        downRight: setDownRight(false)
+        R3: setDownRight(false)
       });
     }
     
     if(downLeft){
       await api.post('path', {
-        downLeft: setDownLeft(false)
+        L3: setDownLeft(false)
       });
     }
 
     if(left){
       await api.post('path', {
-        left: setLeft(false)
+        L2: setLeft(false)
       });
     }
 
     if(right) {
       await api.post('path', {
-        right: setRight(false)
+        R3: setRight(false)
       });
     }
 
     if(upLeft) {
       await api.post('path', {
-        upLeft: setUpLeft(false)
+        L1: setUpLeft(false)
       });
     }
     if(upRight){
       await api.post('path', {
-        upRight: setUpRight(false)
+        R1: setUpRight(false)
       });
     }
     
     await api.post('path', {
-      up: setUp(true)
+      RO: setUp(true)
     });
 
   }, [down, downRight, downLeft, upLeft, upRight, left, right])
@@ -97,49 +97,49 @@ const PivoProvider: React.FC<PivoProviderProps> = ({ children }) => {
   const handleUpRight = useCallback(async() => {
     if(down) {
       await api.post('path', {
-        down: setDown(false)
+        L0: setDown(false)
       });
     }
 
     if(downRight){
       await api.post('path', {
-        downRight: setDownRight(false)
+        R3: setDownRight(false)
       });
     }
     
     if(downLeft){
       await api.post('path', {
-        downLeft: setDownLeft(false)
+        L3: setDownLeft(false)
       });
     }
 
 
     if(left){
       await api.post('path', {
-        left: setLeft(false)
+        L2: setLeft(false)
       });
     }
 
     if(right) {
       await api.post('path', {
-        right: setRight(false)
+        R3: setRight(false)
       });
     }
 
     if(upLeft) {
       await api.post('path', {
-        upLeft: setUpLeft(false)
+        L1: setUpLeft(false)
       });
     }
 
     if(up) {
       await api.post('path', {
-        up: setUp(false)
+        RO: setUp(false)
       });
     } 
 
     await api.post('path', {
-      upRight: setUpRight(true)
+      R1: setUpRight(true)
     });
     
   }, [down, downRight, downLeft, upLeft, up, left, right])
@@ -147,48 +147,48 @@ const PivoProvider: React.FC<PivoProviderProps> = ({ children }) => {
   const handleUpLeft = useCallback(async() => {
     if(down) {
       await api.post('path', {
-        down: setDown(false)
+        L0: setDown(false)
       });
     }
 
     if(downRight){
       await api.post('path', {
-        downRight: setDownRight(false)
+        R3: setDownRight(false)
       });
     }
     
     if(downLeft){
       await api.post('path', {
-        downLeft: setDownLeft(false)
+        L3: setDownLeft(false)
       });
     }
 
     if(left){
       await api.post('path', {
-        left: setLeft(false)
+        L2: setLeft(false)
       });
     }
 
     if(right) {
       await api.post('path', {
-        right: setRight(false)
+        R3: setRight(false)
       });
     }
     
     if(up) {
       await api.post('path', {
-        up: setUp(false)
+        RO: setUp(false)
       });
     } 
 
     if(upRight){
       await api.post('path', {
-        upRight: setUpRight(false)
+        R1: setUpRight(false)
       });
     }
 
     await api.post('path', {
-      upLeft: setUpLeft(true)
+      L1: setUpLeft(true)
     });
 
   }, [down, downRight, downLeft, upRight, up, left, right])
@@ -196,240 +196,240 @@ const PivoProvider: React.FC<PivoProviderProps> = ({ children }) => {
   const handleDown = useCallback(async() => {
     if(downRight){
       await api.post('path', {
-        downRight: setDownRight(false)
+        R3: setDownRight(false)
       });
     }
     
     if(downLeft){
       await api.post('path', {
-        downLeft: setDownLeft(false)
+        L3: setDownLeft(false)
       });
     }
 
     if(left){
       await api.post('path', {
-        left: setLeft(false)
+        L2: setLeft(false)
       });
     }
 
     if(right) {
       await api.post('path', {
-        right: setRight(false)
+        R3: setRight(false)
       });
     }
 
     if(upLeft) {
       await api.post('path', {
-        upLeft: setUpLeft(false)
+        L1: setUpLeft(false)
       });
     }
 
     if(up) {
       await api.post('path', {
-        up: setUp(false)
+        RO: setUp(false)
       });
     } 
 
     if(upRight){
       await api.post('path', {
-        upRight: setUpRight(false)
+        R1: setUpRight(false)
       });
     }
 
     await api.post('path', {
-      down: setDown(true)
+      L0: setDown(true)
     });
   }, [downRight, downLeft, upRight, up, upLeft, left, right])
 
   const handleDownRight = useCallback(async() => {
     if(down) {
       await api.post('path', {
-        down: setDown(false)
+        L0: setDown(false)
       });
     }
     
     if(downLeft){
       await api.post('path', {
-        downLeft: setDownLeft(false)
+        L3: setDownLeft(false)
       });
     }
 
     if(left){
       await api.post('path', {
-        left: setLeft(false)
+        L2: setLeft(false)
       });
     }
 
     if(right) {
       await api.post('path', {
-        right: setRight(false)
+        R3: setRight(false)
       });
     }
 
     if(upLeft) {
       await api.post('path', {
-        upLeft: setUpLeft(false)
+        L1: setUpLeft(false)
       });
     }
 
     if(up) {
       await api.post('path', {
-        up: setUp(false)
+        RO: setUp(false)
       });
     } 
 
     if(upRight){
       await api.post('path', {
-        upRight: setUpRight(false)
+        R1: setUpRight(false)
       });
     }
 
     await api.post('path', {
-      downRight: setDownRight(true)
+      R3: setDownRight(true)
     });
   }, [down, downLeft, upRight, up, upLeft, left, right])
 
   const handleDownLeft = useCallback(async() => {
     if(down) {
       await api.post('path', {
-        down: setDown(false)
+        L0: setDown(false)
       });
     }
 
     if(downRight){
       await api.post('path', {
-        downRight: setDownRight(false)
+        R3: setDownRight(false)
       });
     }
 
     if(left){
       await api.post('path', {
-        left: setLeft(false)
+        L2: setLeft(false)
       });
     }
 
     if(right) {
       await api.post('path', {
-        right: setRight(false)
+        R3: setRight(false)
       });
     }
 
     if(upLeft) {
       await api.post('path', {
-        upLeft: setUpLeft(false)
+        L1: setUpLeft(false)
       });
     }
 
     if(up) {
       await api.post('path', {
-        up: setUp(false)
+        RO: setUp(false)
       });
     } 
 
     if(upRight){
       await api.post('path', {
-        upRight: setUpRight(false)
+        R1: setUpRight(false)
       });
     }
 
     await api.post('path', {
-      downLeft: setDownLeft(true)
+      L3: setDownLeft(true)
     });
   }, [down, downRight, upRight, up, upLeft, left, right])
 
   const handleLeft = useCallback(async() => {
     if(down) {
       await api.post('path', {
-        down: setDown(false)
+        L0: setDown(false)
       });
     }
 
     if(downRight){
       await api.post('path', {
-        downRight: setDownRight(false)
+        R3: setDownRight(false)
       });
     }
     
     if(downLeft){
       await api.post('path', {
-        downLeft: setDownLeft(false)
+        L3: setDownLeft(false)
       });
     }
 
     if(right) {
       await api.post('path', {
-        right: setRight(false)
+        R3: setRight(false)
       });
     }
 
     if(upLeft) {
       await api.post('path', {
-        upLeft: setUpLeft(false)
+        L1: setUpLeft(false)
       });
     }
 
     if(up) {
       await api.post('path', {
-        up: setUp(false)
+        RO: setUp(false)
       });
     } 
 
     if(upRight){
       await api.post('path', {
-        upRight: setUpRight(false)
+        R1: setUpRight(false)
       });
     }
 
     await api.post('path', {
-      left: setLeft(true)
+      L2: setLeft(true)
     });
   }, [down, downRight, downLeft, upRight, up, upLeft, right])
 
   const handleRight = useCallback(async() => {
     if(down) {
       await api.post('path', {
-        down: setDown(false)
+        L0: setDown(false)
       });
     }
 
     if(downRight){
       await api.post('path', {
-        downRight: setDownRight(false)
+        R3: setDownRight(false)
       });
     }
     
     if(downLeft){
       await api.post('path', {
-        downLeft: setDownLeft(false)
+        L3: setDownLeft(false)
       });
     }
 
     if(left){
       await api.post('path', {
-        left: setLeft(false)
+        L2: setLeft(false)
       });
     }
 
     if(upLeft) {
       await api.post('path', {
-        upLeft: setUpLeft(false)
+        L1: setUpLeft(false)
       });
     }
 
     if(up) {
       await api.post('path', {
-        up: setUp(false)
+        RO: setUp(false)
       });
     } 
 
     if(upRight){
       await api.post('path', {
-        upRight: setUpRight(false)
+        R1: setUpRight(false)
       });
     }
 
     await api.post('path', {
-      right: setRight(true)
+      R3: setRight(true)
     });
   }, [down, downRight, downLeft, upRight, up, upLeft, left])
   
