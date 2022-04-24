@@ -1,5 +1,8 @@
 rootProject.name = 'pivofrontend'
 
+include ':sp-react-native-mqtt';
+project(':sp-react-native-mqtt').projectDir = new File(rootProject.projectDir,  '../node_modules/sp-react-native-mqtt/android');
+
 apply from: new File(["node", "--print", "require.resolve('expo/package.json')"].execute(null, rootDir).text.trim(), "../scripts/autolinking.gradle");
 useExpoModules()
 

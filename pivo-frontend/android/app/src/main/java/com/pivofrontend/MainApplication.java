@@ -1,5 +1,6 @@
 package com.pivofrontend;
 
+import com.tuanpm.RCTMqtt.*;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -24,6 +25,7 @@ public class MainApplication extends Application implements ReactApplication {
   private final ReactNativeHost mReactNativeHost = new ReactNativeHostWrapper(
     this,
     new ReactNativeHost(this) {
+    
     @Override
     public boolean getUseDeveloperSupport() {
       return BuildConfig.DEBUG;
@@ -35,6 +37,7 @@ public class MainApplication extends Application implements ReactApplication {
       List<ReactPackage> packages = new PackageList(this).getPackages();
       // Packages that cannot be autolinked yet can be added manually here, for example:
       // packages.add(new MyReactNativePackage());
+      packages.add(new RCTMqttPackage());
       return packages;
     }
 

@@ -11,36 +11,21 @@ import {
 } from './styles';
 import { Toogle } from '../../components/Toogle';
 import { usePivo } from '../../hooks/pivo';
-
-
+import { useSettings } from '../../hooks/settings';
 
 export function Settings(){
-  // Criar estada para cada Toogle
-  const [activePipe, setActivePipe] = useState(true);
-  const [bombs, setBombs] = useState(true);
-  const [arms, setArms] = useState(true);
-  const [reels, setReels] = useState(true);
-  const [wheels, setWheels] = useState(true);
-
-  const handleActivePipe = useCallback(() => {
-    setActivePipe(!activePipe);
-  }, [activePipe])
-
-  const handleBombs = useCallback(() => {
-    setBombs(!bombs);
-  }, [bombs])
-
-  const handleArms = useCallback(() => {
-    setArms(!arms);
-  }, [arms])
-
-  const handleReels = useCallback(() => {
-    setReels(!reels);
-  }, [reels])
-
-  const handleWheels = useCallback(() => {
-    setWheels(!wheels);
-  }, [wheels])
+  const { 
+    activePipe, 
+    bombs, 
+    arms, 
+    reels, 
+    wheels,
+    handleActivePipe,
+    handleBombs,
+    handleArms,
+    handleReels,
+    handleWheels
+  } = useSettings();
 
   const { pivoMode }= usePivo();
   return (
@@ -58,24 +43,24 @@ export function Settings(){
           <SectionOne>
             <Toogle 
               title={'Bomba'}
-              active={bombs}
+              active={!!activePipe && bombs}
               handle={handleBombs}
             />
             <Toogle 
               title={'Braço'}
-              active={arms}
+              active={!!activePipe && arms}
               handle={handleArms}
             />
           </SectionOne>
           <SectionTwo>
             <Toogle 
               title={'Carretel'}
-              active={reels}
+              active={!!activePipe && reels}
               handle={handleReels}
             />
             <Toogle 
               title={'Rodas'}
-              active={wheels}
+              active={!!activePipe && wheels}
               handle={handleWheels}
             />
           </SectionTwo>

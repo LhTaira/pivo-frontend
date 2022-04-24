@@ -45,7 +45,6 @@ const PivoProvider: React.FC<PivoProviderProps> = ({ children }) => {
   const [left, setLeft] = useState(false);
   const [right, setRight] = useState(false);
 
-
   const handleUp = useCallback(() => {
     if(down) setDown(false);
     if(downRight) setDownRight(false);

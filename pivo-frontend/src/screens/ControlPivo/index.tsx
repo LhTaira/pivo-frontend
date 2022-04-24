@@ -1,16 +1,16 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { KeyboardAvoidingView, Platform } from 'react-native';
+// @ts-nocheck
+import React, { useCallback, useState } from 'react';
+import { KeyboardAvoidingView } from 'react-native';
 import { InputForm } from '../../components/Forms/InputForm';
 import { Header } from '../../components/Header';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import * as Yup from 'yup';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { usePivo } from '../../hooks/pivo';
+
 
 import { useForm } from 'react-hook-form';
 import { 
-  Container,
   Form,
   Fields,
   Title,
@@ -19,6 +19,7 @@ import {
 import { Alert, Keyboard, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Button } from '../../components/Forms/Button';
+import api from '../../services/api';
 
 interface FormData {
   lamina: number;
@@ -47,18 +48,20 @@ export function ControlPivo(){
   } = useForm({
     resolver: yupResolver(schema)
   });
- 
+
+
+
   const handleRegister = useCallback(async (form :FormData) => {
-  
-    const newControlPivo = {
-      lamina: form.lamina,
-      irrigation: form.irrigation,
-    }
-    
-   
     try {
-      
-      console.log(JSON.stringify(newControlPivo));
+      const response = await api.post('saveUserPreferences', {
+        control: pivoMode,
+        lamina: form.lamina,
+        irrigation: form.irrigation,
+      });
+      console.log(response.status)
+      reset();
+
+      navigation.navigate('Settings');
       // const dataKey = '@pivo:controlPivo';
   
       // const data = await AsyncStorage.getItem(dataKey);
@@ -70,10 +73,6 @@ export function ControlPivo(){
       // ]
   
       // await AsyncStorage.setItem(dataKey, JSON.stringify(dataFormatted));
-  
-      reset();
-
-      navigation.navigate('Settings');
   
     } catch (error){
       console.log(error);
