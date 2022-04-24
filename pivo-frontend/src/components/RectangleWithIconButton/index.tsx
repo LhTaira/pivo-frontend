@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
@@ -18,7 +19,6 @@ const width = RFValue(100)
 
 export function RectangleWithIcon({ type }: RectangleWithIconProps){
   const {setPivoModeValue, pivoMode } = usePivo();
-  console.log(pivoMode);
   return(
     <Container>
       <AwesomeButton

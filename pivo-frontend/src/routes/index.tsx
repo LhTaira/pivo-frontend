@@ -8,7 +8,6 @@ import { usePivo } from '../hooks/pivo';
 
 export function Routes(){
   const { pivoMode } = usePivo();
-  console.log(pivoMode);
 
   return (
     <NavigationContainer>

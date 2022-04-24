@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 export const Container = styled(TouchableOpacity)`
   position: absolute;
-  margin-left: ${RFPercentage(48)}px;
+  margin-left: ${RFPercentage(46)}px;
   bottom: ${RFPercentage(32)}px;
   width: ${RFValue(40)}px;
   height: ${RFValue(40)}px;

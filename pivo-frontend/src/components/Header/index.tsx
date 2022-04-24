@@ -6,6 +6,7 @@ import {
   Title,
 } from './styles';
 import { usePivo } from '../../hooks/pivo';
+import { useSettings } from '../../hooks/settings';
 
 interface HeaderProps {
   title: string;
@@ -14,6 +15,9 @@ interface HeaderProps {
 
 export function Header({ title, pivoMode }: HeaderProps){
   const { setPivoModeValue } = usePivo();
+  const { 
+    handleActivePipe,
+  } = useSettings();
 
   const handleSwap = useCallback(() => {
     setPivoModeValue("");

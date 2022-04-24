@@ -14,14 +14,18 @@ import {
 import { usePivo } from '../../hooks/pivo';
 
 export function Gamepad(){
-  const { pivoMode }= usePivo();
-  const [up, setUp] = useState(false);
-  
+  const { 
+    pivoMode,
+    handleUp,
+    handleUpLeft,
+    handleUpRight,
+    handleDown,
+    handleDownLeft,
+    handleDownRight,
+    handleLeft,
+    handleRight
+  } = usePivo();
 
-  const handleUp = useCallback(() => {
-    setUp(true);
-    console.log(up);
-  }, [up])
 
   return (
     <Container>
@@ -31,20 +35,20 @@ export function Gamepad(){
       <Content>
 
         <WrapLeftDiagonal>
-          <DiagonalButton onPress={handleUp} />
-          <ButtonGamepad marginTop={28} marginBottom={20} onPress={handleUp} nameIcon="caretleft"/>
-          <DiagonalButton onPress={handleUp} />
+          <DiagonalButton onPress={handleUpLeft} />
+          <ButtonGamepad marginTop={28} marginBottom={20} onPress={handleLeft} nameIcon="caretleft"/>
+          <DiagonalButton onPress={handleDownLeft} />
         </WrapLeftDiagonal>
         
         <WrapVertical>
           <ButtonGamepad marginBottom={80} onPress={handleUp} nameIcon="caretup"/>
-          <ButtonGamepad onPress={handleUp} nameIcon="caretdown"/>
+          <ButtonGamepad onPress={handleDown} nameIcon="caretdown"/>
         </WrapVertical>
         
         <WrapLeftDiagonal>
-          <DiagonalButton onPress={handleUp} />
-          <ButtonGamepad marginTop={28} marginBottom={20} onPress={handleUp} nameIcon="caretright"/>
-          <DiagonalButton onPress={handleUp} />
+          <DiagonalButton onPress={handleUpRight} />
+          <ButtonGamepad marginTop={28} marginBottom={20} onPress={handleRight} nameIcon="caretright"/>
+          <DiagonalButton onPress={handleDownRight} />
         </WrapLeftDiagonal>
       </Content>
     </Container>

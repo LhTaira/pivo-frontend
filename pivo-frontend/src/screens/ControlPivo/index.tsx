@@ -53,26 +53,14 @@ export function ControlPivo(){
 
   const handleRegister = useCallback(async (form :FormData) => {
     try {
-      const response = await api.post('saveUserPreferences', {
+      await api.post('saveUserPreferences', {
         control: pivoMode,
         lamina: form.lamina,
         irrigation: form.irrigation,
       });
-      console.log(response.status)
       reset();
 
       navigation.navigate('Settings');
-      // const dataKey = '@pivo:controlPivo';
-  
-      // const data = await AsyncStorage.getItem(dataKey);
-      // const currentData = data ? JSON.parse(data): [];
-  
-      // const dataFormatted = [
-      //   ...currentData,
-      //   newControlPivo
-      // ]
-  
-      // await AsyncStorage.setItem(dataKey, JSON.stringify(dataFormatted));
   
     } catch (error){
       console.log(error);
