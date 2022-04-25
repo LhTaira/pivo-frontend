@@ -32,7 +32,6 @@ type NavigationProps = {
 
 const schema = Yup.object().shape({
   lamina: Yup.number().typeError('Informe um valor númerico').positive('O valor não pode ser negativo').required('Valor é obrigatório'),
-  irrigation: Yup.number().typeError('Informe um valor númerico').positive('O valor não pode ser negativo').required('Valor é obrigatório'),
 })
 
 export function ControlPivo(){
@@ -56,7 +55,6 @@ export function ControlPivo(){
       await api.post('saveUserPreferences', {
         control: pivoMode,
         lamina: form.lamina,
-        irrigation: form.irrigation,
       });
       reset();
 
@@ -82,7 +80,6 @@ export function ControlPivo(){
         <Header pivoMode={pivoMode} title={`Controle de Irrigação`}/>
         <Form>
           <Fields>
-
           <InputForm 
             title={`Lâmina d'água`}
             subtitle={`Determine a lâmina d'água (mm)`}
@@ -93,18 +90,6 @@ export function ControlPivo(){
             keyboardType="numeric"
             placeholder="112"
             error={errors.lamina && errors.lamina.message} 
-          />
-
-          <InputForm
-            title={`Tempo de Irrigação`}
-            subtitle={`Determine o tempo de irrigação (Até 24h)`}
-            icon='time-outline'
-            name="irrigation"
-            onPressIn={() => setBehavior('position')}
-            control={control} 
-            placeholder="10"
-            keyboardType="numeric"
-            error={errors.irrigation && errors.irrigation.message} 
           />
           </Fields>
           <WrapButton>

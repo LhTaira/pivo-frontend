@@ -7,7 +7,6 @@ import {
   Line,
   Subtitle,
   SectionOne,
-  SectionTwo,
 } from './styles';
 import { Toogle } from '../../components/Toogle';
 import { usePivo } from '../../hooks/pivo';
@@ -18,13 +17,9 @@ export function Settings(){
     activePipe, 
     bombs, 
     arms, 
-    reels, 
-    wheels,
     handleActivePipe,
     handleBombs,
     handleArms,
-    handleReels,
-    handleWheels
   } = useSettings();
 
   const { pivoMode }= usePivo();
@@ -47,23 +42,11 @@ export function Settings(){
               handle={handleBombs}
             />
             <Toogle 
-              title={'Braço'}
+              title={'Circular'}
               active={!!activePipe && arms}
               handle={handleArms}
             />
           </SectionOne>
-          <SectionTwo>
-            <Toogle 
-              title={'Carretel'}
-              active={!!activePipe && reels}
-              handle={handleReels}
-            />
-            <Toogle 
-              title={'Rodas'}
-              active={!!activePipe && wheels}
-              handle={handleWheels}
-            />
-          </SectionTwo>
       </Content>
     </Container>
   )

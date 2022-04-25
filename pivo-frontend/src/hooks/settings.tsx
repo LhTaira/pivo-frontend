@@ -10,13 +10,9 @@ interface ISettingsContextData {
   activePipe: boolean;
   bombs: boolean;
   arms: boolean;
-  reels: boolean;
-  wheels: boolean;
   handleActivePipe(): void;
   handleBombs(): void;
   handleArms(): void;
-  handleReels(): void;
-  handleWheels(): void;
 }
 
 const SettingsContext = createContext({} as ISettingsContextData);
@@ -33,8 +29,6 @@ const SettingsProvider: React.FC<SettingsProviderProps> = ({ children }) => {
       await api.post('status', {
         pump: setBombs(true),
         arm: setArms(true),
-        reel: setReels(true),
-        whhel: setWheels(true),
         
       });
     }
@@ -55,32 +49,14 @@ const SettingsProvider: React.FC<SettingsProviderProps> = ({ children }) => {
     });
   }, [arms])
 
-  const handleReels = useCallback(async() => {
-    await api.post('status', {
-      reel: setReels(!reels)
-    });
-    setReels(!reels);
-  }, [reels])
-
-  const handleWheels = useCallback(async() => {
-    await api.post('status', {
-      whhel: setWheels(!wheels)
-    });
-    
-  }, [wheels])
-
   return (
     <SettingsContext.Provider value={{
       activePipe,
       bombs,
       arms,
-      reels,
-      wheels,
       handleActivePipe,
       handleBombs,
       handleArms,
-      handleReels,
-      handleWheels,
     }}>
       { children }
     </SettingsContext.Provider>

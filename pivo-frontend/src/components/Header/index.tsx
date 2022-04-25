@@ -7,6 +7,7 @@ import {
 } from './styles';
 import { usePivo } from '../../hooks/pivo';
 import { useSettings } from '../../hooks/settings';
+import api from '../../services/api';
 
 interface HeaderProps {
   title: string;
@@ -19,9 +20,12 @@ export function Header({ title, pivoMode }: HeaderProps){
     handleActivePipe,
   } = useSettings();
 
-  const handleSwap = useCallback(() => {
+  const handleSwap = useCallback(async() => {
     setPivoModeValue("");
-  }, [setPivoModeValue])
+    await api.post('saveUserPreferences', {
+      control: 'manual'
+    });
+  }, [])
 
   return (
       <Container>
